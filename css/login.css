@@ -1,0 +1,239 @@
+/* ---------------------------------------| Variubles |------------------------------------------ */
+:root{
+    --color-body: #eee6f5;
+    --color-wrapper:#fefefe;
+    --color-wrapper-afect:#e9d0ff;
+    --color-fonts:#2e2e2ebd;
+    --color-lable:#000000;
+    --color-icon:#6f07ca;
+    --color-button:linear-gradient(to right ,#6f07ca ,#8504f6);
+    --font-h1: 50px;
+    --font-p:15px;
+    --font-p-improtant:17px;
+    --font-input:20px;
+    --font-lable: 17px;
+    --font-icon:30px;
+    --color-gradint-google:#6f07ca;
+    --color-gradint-face-book:#006eff;
+    --color-gradint-apple: #000000;
+}
+/* ---------------------------------------| Tag |------------------------------------------ */
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--color-body);
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* ---------------------------------------| General classes |------------------------------------------ */
+
+/* ---------------------------------------| Fonts |------------------------------------------ */
+@font-face {
+    font-family: 'The-Daily';
+    src: url("../fonts/The Daily Midtones DEMO/TheDailyMidtones-Regular.ttf");
+    font-weight: normal;
+}
+/* ---------------------------------------| login - form |------------------------------------------ */
+.wrapper{
+    max-width: 500px;
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-wrapper);
+    border-radius: 25px;
+}
+.wrapper > div.circle{
+    margin: 15px 10px 5px 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-wrapper-afect);
+    position: relative;
+}
+.wrapper > div.circle > i{
+    font-size: var(--font-input);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    color: var(--color-icon);
+}
+.wrapper > h1{
+    font-size: var(--font-h1);
+    font-family: 'The-Daily';
+    color: var(--color-lable);
+}
+.wrapper > p{
+    padding: 0px 10px 20px 10px;
+    font-size: var(--font-p);
+    font-family: 'The-Daily';
+    color: var(--color-fonts);
+    word-spacing: 5px;
+}
+.wrapper > form{
+    color: var(--color-lable);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper > form  label{
+    font-size: var(--font-lable);
+    font-weight: bold;
+    display: block;
+    align-self: flex-start;
+}
+.wrapper > form  input{
+    margin: 10px 5px;
+    padding: 15px 100px ;
+    font-size: var(--font-lable);
+    color: var(--font-input);
+    border: 1px solid var(--color-fonts);
+    border-radius: 5px;
+    caret-color: var(--color-icon);
+}
+.wrapper > form  input::placeholder{
+    color: var(--font-input);
+}
+.wrapper > form  > div.remember{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper > form  > div.remember >input{
+    width: 15px;
+    height: 15px;
+}
+.wrapper > form  > div.remember >label{
+    margin-right: 150px;
+    margin-top: 6px;
+}
+.wrapper > form button{
+    width: 100%;
+    color: var(--color-wrapper);
+    font-size: var(--font-input);
+    background: var(--color-button);
+    margin: 10px 10px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    transition: 0.6s;
+}
+.wrapper > form button:hover{
+    width: 100%;
+    color: var(--color-icon);
+    background: var(--color-wrapper);
+    border-color: var(--color-icon);
+}
+.wrapper > div.another-way{
+    color: var(--color-fonts);
+    padding: 5px 10px 20px 10px;
+}
+.wrapper > div.line{
+    width: 400px;
+    height: 1px;
+    color: var(--color-fonts);
+    background-color: var(--color-fonts);
+    position: relative;
+}
+.wrapper > div.line > span{
+    position: absolute;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    background-color: var(--color-wrapper);
+    display: inline-block;
+}
+.wrapper > ul{
+    width: 100%;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.wrapper > ul > li{
+    padding: 15px 25px;
+    border:  1px solid var(--color-fonts);
+    border-radius: 5px;
+}
+.wrapper > ul > li:nth-child(1) > a > i{
+    color: var(--color-gradint-google);
+}
+.wrapper > ul > li:nth-child(2) > a > i{
+    color: var(--color-gradint-face-book);
+}
+.wrapper > ul > li:nth-child(3) > a > i{
+    color: var(--color-gradint-apple);
+}
+.wrapper > ul > li > a > i{
+    font-size: var(--font-icon);
+}
+/* ---------------------------------------| Responsive for mobile 0px to 425px |------------------------------------------ */
+@media (min-width: 0px) and (max-width: 425px) {
+    .wrapper > form  input{
+    margin: 10px 5px;
+    padding: 10px 25px ;
+    font-size: var(--font-lable);
+    color: var(--font-input);
+    border: 1px solid var(--color-fonts);
+    border-radius: 5px;
+    caret-color: var(--color-icon);
+}
+.wrapper > form  label{
+    font-size: var(--font-lable);
+    font-weight: bold;
+    display: block;
+    align-self: center;
+}
+.wrapper > form button{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    width: 90%;
+    color: var(--color-wrapper);
+    font-size: var(--font-input);
+    background: var(--color-button);
+    border-radius: 5px;
+    transition: 0.6s;
+}
+.wrapper > div.line{
+    width: 300px;
+    height: 1px;
+    color: var(--color-fonts);
+    background-color: var(--color-fonts);
+    position: relative;
+}
+.wrapper{
+    max-width: 350px;
+    text-align: center;
+}
+.wrapper > form  > div.remember{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper > form  > div.remember >input{
+    width: 10px;
+    height: 10px;
+}
+.wrapper > form  > div.remember >label{
+    margin-right: 50px;
+    margin-top: 6px;
+}
+}
