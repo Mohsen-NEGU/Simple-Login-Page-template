@@ -1,45 +1,57 @@
 var fullName = document.getElementById("fullname");
+var email = document.getElementById("email");
 var phoneNumber = document.getElementById("phone-number");
-// var password = document.getElementById("password");
+var password = document.getElementById("password");
 
-firstName.addEventListener("input", function(event){
-    document.querySelector("error-massage").innerHTML = validation("string" , event.target.value)
+
+fullName.addEventListener("input", function(event){
+    document.getElementById("fullNameError").innerHTML = validation("string" , event.target.value);
 });
-
+email.addEventListener("input", function(event){
+    document.getElementById("emailError").innerHTML = validation("email" , event.target.value);
+});
 phoneNumber.addEventListener("input", function(event){
-    document.querySelector("error-massage").innerHTML = validation("number" , event.target.value)
+    document.getElementById("phoneNumberError").innerHTML = validation("number" , event.target.value);
 });
-// password.addEventListener("input", function(event){
-//     document.querySelector("error-massage").innerHTML = validation("password" , event.target.value)
-// });
+
+password.addEventListener("input", function(event){
+    document.getElementById("passwordError").innerHTML = validation("password" , event.target.value);
+});
 
 
 function validation(type , value){
-    var errorMessage = '';
+    var errorMessage = "";
 
     switch(type){
         case "nothing":
             if(1 == true){
                 errorMessage = "Your input is empty";
             }
-        break
+            break
         case "number":
-            var regex = /^-?\d*$/;
+            var regex = /^-?\d+$/;
             if (!regex.test(value)){
                 errorMessage = "Sorry , Your input is not number";
             }
             break
         case "string":
-            var regex = /^[A-Za-z]*$/;
+            var regex = /^[A-Za-zآ-ی ]+$/;
             if (!regex.test(value)){
                 errorMessage = "Sorry , Your input is not string";
             }
             break
-        // case "password":
-        //     var regex = /^[A-Za-z]*$/;
-        //     if (!regex.test(value)){
-        //         errorMessage = "Sorry , Your password not assesdinite";
-        //     }
-        //     break
+        case "email":
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regex.test(value)){
+                errorMessage = "Sorry , Your email not assesdinite";
+            }
+            break
+        case "password":
+            var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if (!regex.test(value)){
+                errorMessage = "Sorry , Your email not assesdinite";
+            }
+            break
     }
+    return errorMessage;
 }
