@@ -401,7 +401,7 @@ a{
         transform: translate(-30% ,-145%);
     }
     50%{
-        transform: translate(60% , -60%);
+        transform: translate(60% , -100%);
         --color-one: #ff5fa2;
         --color-two: tomato;
         --color-four: #fdb185;
