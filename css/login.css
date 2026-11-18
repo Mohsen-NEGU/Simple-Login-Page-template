@@ -13,6 +13,7 @@
     --font-input:20px;
     --font-lable: 17px;
     --font-icon:35px;
+    --font-error: 10px;
     --color-gradint-google:#6f07ca;
     --color-gradint-face-book:#006eff;
     --color-gradint-apple: #000000;
@@ -357,7 +358,27 @@ a{
     animation: move-5 5s ease-in-out infinite alternate; 
 }
 
-
+.error-massage{
+    padding: 2px 0;
+    display: flex;
+    justify-content: center;
+    color: var(--color-one);
+    font-size: var(--font-error);
+    position: relative;
+}
+.error-massage::after{
+    content: " ";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: green;
+    position: absolute;
+    left: 70%;
+    display: none;
+}
+input:focus ~ .error-massage::after{
+    display: block;
+}
 
 
 @keyframes move-1 {
