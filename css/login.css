@@ -17,6 +17,26 @@
     --color-gradint-face-book:#006eff;
     --color-gradint-apple: #000000;
 }
+@property --color-one{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #6f07ca;
+}
+@property --color-two{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #945fff;
+}
+@property --color-three{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ab02de;
+}
+@property --color-four{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f75fff;
+}
 /* ---------------------------------------| Tag |------------------------------------------ */
 *,
 *::after,
@@ -96,6 +116,7 @@ a{
     border-left: 2px dotted var(--color-icon);
     border-radius: 2px;
     padding-left:5px ;
+    position: relative;
 }
 .login-form  label{
     font-size: var(--font-lable);
@@ -194,9 +215,40 @@ a{
 .links i{
     font-size: var(--font-icon);
 }
-
-/* ---------------------------------------| Responsive for mobile 0px to 425px |------------------------------------------ */
-@media (min-width: 0px) and (max-width: 425px) {
+.massage{
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    left: 0;
+    background-color: var(--color-one);
+    color: white;
+    transform: translate(0 , 14px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 5;
+    border-radius: 10px;
+}
+.massage::after{
+    content: '';
+    border: 15px solid transparent;
+    border-bottom-color: var(--color-one);
+    position: absolute;
+    bottom: 100%;
+    left: 10%;
+    transform: translate(-10% ,1px);
+    z-index: 5;
+}
+#fullname:focus ~ .massage,
+#email:focus ~ .massage,
+#phone-number:focus ~ .massage,
+#password:focus ~ .massage{
+    opacity: 1;
+    visibility: unset;
+}
+/* ---------------------------------------| Responsive for mobile 0px to 375px |------------------------------------------ */
+@media (min-width: 0px) and (max-width: 375px) {
     .wrapper > form  input{
     margin: 10px 5px;
     padding: 10px 25px ;
@@ -262,35 +314,96 @@ a{
 .purpel-1{
     width: 320px;
     height: 320px;
-    top: 30%;
-    left: 60%;
-    background: linear-gradient(60deg ,#6f07ca,#945fff, #ab02de,#f75fff);
+    top: 10%;
+    left: 65%;
+    transform: translate(-65% , -10%);
+    background: linear-gradient(60deg ,var(--color-one),var(--color-two), var(--color-three),var(--color-four));
+    animation: move-1 4s ease-in-out infinite alternate;
 }
 .purpel-2{
     width: 100px;
     height: 100px;
     top: 70%;
     left: 55%;
-    background: linear-gradient(290deg ,#6f07ca ,#8504f6,#f75fff);
+    background: linear-gradient(290deg ,var(--color-one) ,var(--color-two),var(--color-four));
 }
 .purpel-3{
     width: 380px;
     height: 380px;
-    top: 90%;
+    top: 100%;
     left: 34%;
-    background: linear-gradient(290deg ,#6f07ca ,#8504f6,#f75fff);
+    transform: translate(-60% , -70%);
+    background: linear-gradient(290deg ,var(--color-one) ,var(--color-two),var(--color-four));
+    animation: move-3 5s ease-in-out infinite alternate;
 }
 .purpel-4{
     width: 180px;
     height: 180px;
     top: 125%;
     left: 64%;
-    background: linear-gradient(135deg ,#6f07ca,#945fff, #ab02de,#f75fff);   
+    transform: translate(-30% ,-10%);
+    background: linear-gradient(135deg ,var(--color-one),var(--color-two), var(--color-three),var(--color-four)); 
+    animation: move-4 5s ease-in-out infinite alternate;  
 }
 .purpel-5{
     width: 70px;
     height: 70px;
-    top: 145%;
-    left: 37%;
-    background: linear-gradient(290deg ,#6f07ca ,#8504f6,#f75fff);
+    top: 149%;
+    left: 34%;
+    transform: translate(-30% ,-145%);
+    background: linear-gradient(290deg ,var(--color-one) ,var(--color-two),var(--color-four));
+    animation: move-5 5s ease-in-out infinite alternate; 
+}
+
+
+
+
+@keyframes move-1 {
+    0%,100%{
+        transform: translate(-65% , -10%);
+    }
+    50%{
+        transform: translate(-50% , 0%);
+        --color-one: #ff5fa2;
+        --color-two: tomato;
+        --color-three: #ff9a5f;
+        --color-four: #fdb185;
+    }
+}
+
+
+@keyframes move-3 {
+    0%,100%{
+        transform: translate(-60% , -70%);
+    }
+    50%{
+        transform: translate(-80% , -60%);
+        --color-four: #5ff2ff;
+        --color-one: #028ade;
+        --color-two: #5fdcff;
+    }
+}
+
+@keyframes move-4 {
+    0%,100%{
+        transform: translate(-30% , -10%);
+    }
+    50%{
+        transform: translate(60% , -60%);
+        --color-one: #f8f7f8;
+        --color-two: #02decf;
+        --color-four: #6f07ca;
+    }
+}
+
+@keyframes move-5 {
+    0%,100%{
+        transform: translate(-30% ,-145%);
+    }
+    50%{
+        transform: translate(60% , -60%);
+        --color-one: #ff5fa2;
+        --color-two: tomato;
+        --color-four: #fdb185;
+    }
 }
