@@ -1,6 +1,6 @@
 /* ---------------------------------------| Variubles |------------------------------------------ */
 :root{
-    --color-body: #eee6f5;
+    --color-body: #ece0f7;
     --color-wrapper:#fefefe;
     --color-wrapper-afect:#e9d0ff;
     --color-fonts:#2e2e2ebd;
@@ -12,7 +12,7 @@
     --font-p-improtant:17px;
     --font-input:20px;
     --font-lable: 17px;
-    --font-icon:30px;
+    --font-icon:35px;
     --color-gradint-google:#6f07ca;
     --color-gradint-face-book:#006eff;
     --color-gradint-apple: #000000;
@@ -53,8 +53,10 @@ a{
     align-items: center;
     background-color: var(--color-wrapper);
     border-radius: 25px;
+    opacity: 0.95;
+    backdrop-filter: blur(22px) saturate(160%);
 }
-.wrapper > div.circle{
+.circle{
     margin: 15px 10px 5px 10px;
     width: 50px;
     height: 50px;
@@ -62,7 +64,7 @@ a{
     background-color: var(--color-wrapper-afect);
     position: relative;
 }
-.wrapper > div.circle > i{
+.circle > i{
     font-size: var(--font-input);
     position: absolute;
     top: 50%;
@@ -70,59 +72,67 @@ a{
     transform: translate(-50% ,-50%);
     color: var(--color-icon);
 }
-.wrapper > h1{
+.title{
     font-size: var(--font-h1);
     font-family: 'The-Daily';
     color: var(--color-lable);
 }
-.wrapper > p{
+.sub-title{
     padding: 0px 10px 20px 10px;
     font-size: var(--font-p);
     font-family: 'The-Daily';
     color: var(--color-fonts);
     word-spacing: 5px;
 }
-.wrapper > form{
+.login-form{
     color: var(--color-lable);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.wrapper > form  label{
+.keeper{
+    margin-block: 10px;
+    border-left: 2px dotted var(--color-icon);
+    border-radius: 2px;
+    padding-left:5px ;
+}
+.login-form  label{
     font-size: var(--font-lable);
     font-weight: bold;
     display: block;
     align-self: flex-start;
 }
-.wrapper > form  input{
-    margin: 10px 5px;
-    padding: 15px 100px ;
+.login-form  input{
+    margin: 3px 0px;
+    padding: 15px 100px;
+
     font-size: var(--font-lable);
     color: var(--font-input);
     border: 1px solid var(--color-fonts);
     border-radius: 5px;
     caret-color: var(--color-icon);
+    cursor:cell;
 }
-.wrapper > form  input::placeholder{
+.login-form  input::placeholder{
     color: var(--font-input);
 }
-.wrapper > form  > div.remember{
+.remember{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.wrapper > form  > div.remember >input{
+.remember > input{
     width: 15px;
     height: 15px;
 }
-.wrapper > form  > div.remember >label{
+.remember > label{
     margin-right: 150px;
     margin-top: 6px;
 }
-.wrapper > form button{
+.btn-login{
     width: 100%;
     color: var(--color-wrapper);
     font-size: var(--font-input);
@@ -131,25 +141,26 @@ a{
     padding: 15px 10px;
     border-radius: 5px;
     transition: 0.6s;
+    cursor: pointer;
 }
-.wrapper > form button:hover{
+.btn-login:hover{
     width: 100%;
     color: var(--color-icon);
     background: var(--color-wrapper);
     border-color: var(--color-icon);
 }
-.wrapper > div.another-way{
+.another-way{
     color: var(--color-fonts);
     padding: 5px 10px 20px 10px;
 }
-.wrapper > div.line{
+.line{
     width: 400px;
     height: 1px;
     color: var(--color-fonts);
     background-color: var(--color-fonts);
     position: relative;
 }
-.wrapper > div.line > span{
+.line > span{
     position: absolute;
     margin-bottom: 20px;
     padding: 5px 10px;
@@ -159,30 +170,31 @@ a{
     background-color: var(--color-wrapper);
     display: inline-block;
 }
-.wrapper > ul{
+.link-list{
     width: 100%;
     padding: 30px 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.wrapper > ul > li{
+.how-conect{
     padding: 15px 25px;
     border:  1px solid var(--color-fonts);
     border-radius: 5px;
 }
-.wrapper > ul > li:nth-child(1) > a > i{
+.how-conect:nth-child(1) .links i{
     color: var(--color-gradint-google);
 }
-.wrapper > ul > li:nth-child(2) > a > i{
+.how-conect:nth-child(2) .links i{
     color: var(--color-gradint-face-book);
 }
-.wrapper > ul > li:nth-child(3) > a > i{
+.how-conect:nth-child(3) .links i{
     color: var(--color-gradint-apple);
 }
-.wrapper > ul > li > a > i{
+.links i{
     font-size: var(--font-icon);
 }
+
 /* ---------------------------------------| Responsive for mobile 0px to 425px |------------------------------------------ */
 @media (min-width: 0px) and (max-width: 425px) {
     .wrapper > form  input{
@@ -236,4 +248,49 @@ a{
     margin-right: 50px;
     margin-top: 6px;
 }
+}
+
+.blob{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    filter: blur(3px);
+    z-index: -20;
+}
+.purpel-1{
+    width: 320px;
+    height: 320px;
+    top: 30%;
+    left: 60%;
+    background: linear-gradient(60deg ,#6f07ca,#945fff, #ab02de,#f75fff);
+}
+.purpel-2{
+    width: 100px;
+    height: 100px;
+    top: 70%;
+    left: 55%;
+    background: linear-gradient(290deg ,#6f07ca ,#8504f6,#f75fff);
+}
+.purpel-3{
+    width: 380px;
+    height: 380px;
+    top: 90%;
+    left: 34%;
+    background: linear-gradient(290deg ,#6f07ca ,#8504f6,#f75fff);
+}
+.purpel-4{
+    width: 180px;
+    height: 180px;
+    top: 125%;
+    left: 64%;
+    background: linear-gradient(135deg ,#6f07ca,#945fff, #ab02de,#f75fff);   
+}
+.purpel-5{
+    width: 70px;
+    height: 70px;
+    top: 145%;
+    left: 37%;
+    background: linear-gradient(290deg ,#6f07ca ,#8504f6,#f75fff);
 }

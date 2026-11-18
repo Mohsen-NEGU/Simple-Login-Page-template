@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,50 +8,92 @@
     <!----------------------------| Css-link |------------------------------->
     <link rel="stylesheet" href="css/login.css">
     <!----------------------------| Font-Awesome-4.7 |------------------------------->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
 <body>
+    <div class="blob purpel-1"></div>
+    <div class="blob purpel-2"></div>
+    <div class="blob purpel-3"></div>
+    <div class="blob purpel-4"></div>
+    <div class="blob purpel-5"></div>
+
+
     <div class="wrapper">
-    <div class="circle">
-        <i class="fa Example of user-circle-o fa-user-circle-o"></i>
-    </div>
-    <h1>Welcome Back!</h1>
-    <P>Please fill in the details to login to your account.</P>
-    <form action="" class="login-form">
-        <label for="name">First Name</label>
-        <i class="fa Example of user-o fa-user-o"><input id="name" type="text" placeholder="Enter your first name"></i>
-        <label for="family">Last Name</label>
-        <i class="fa Example of user-o fa-user-o"><input id="family" type="text" placeholder="Enter your last name"></i>
-        <label for="phone-number">Phone Number</label>
-        <i class="fa Example of phone fa-phone"><input id="phone-number" type="number" placeholder="Enter your phone number"></i>
-        <label for="password">Password</label>
-        <i class="fa Example of unlock-alt fa-unlock-alt"><input id="password" type="password" placeholder="Enter your passwo name"></i>
-        <div class="remember">
-            <input id="remember" type="checkbox">
-            <label for="remember"> Remember me</label>
-            <a href="#">Forgot password?</a>
+        <div class="circle">
+            <i class="fa Example of user-circle-o fa-user-circle-o"></i>
         </div>
-        <button>Login</button>
-    </form>
-    <div class="another-way">Don't have an account?<a href=""> Sign up</a></div>
-    <div class="line">
-        <span>or continue width</span>
-    </div>
-    <ul>
-        <li>
-            <a href=""><i class="fa Example of google fa-google"></i></a></li>
-        <li>
-            <a href=""><i class="fa fa-facebook-square"></i></a></li>
-        <li>
-            <a href=""><i class="fa Example of apple fa-apple"></i></a></li>
-    </ul>   
+        <h1 class="title">Welcome Back!</h1>
+        <P class="sub-title">Please fill in the details to login to your account.</P>
+        <form action="" class="login-form">
+
+            <div class="keeper">
+                <label for="fullname" class="lbl-name">Full Name:</label>
+                <i class="fa Example of user-o fa-user-o"></i>
+                <input id="fullname" type="text" placeholder="Enter your full name">
+                <span class="error-massage"></span>
+                <p class="massageew">You must be fill this place</p>
+
+            </div>
+
+            <div class="keeper">
+                <label for="email" class="lbl-email">@Email:</label>
+                <i class="fa Example of user-o fa-user-o"></i>
+                <input id="email" type="email" placeholder="Enter your email">
+                <span class="error-massage"></span>
+                <p class="massageew">You must be fill this place</p>
+
+            </div>
+
+            <div class="keeper">
+                <label for="phone-number" class="lbl-phone">Phone Number:</label>
+                <i class="fa Example of phone fa-phone"></i>
+                <input id="phone-number" type="text" placeholder="Enter your phone number">
+                <span class="error-massage"></span>
+                <p class="massageew">You must be fill this place</p>
+            </div>
+
+            <div class="keeper">
+                <label for="password" class="lbl-password">Password:</label>
+                <i class="fa Example of unlock-alt fa-unlock-alt"></i>
+                <input id="password" type="password" placeholder="Enter your passwo name">
+                <span class="error-massage"></span>
+                <p class="massageew">You must be fill this place</p>
+            </div>
+            <div class="remember">
+                <input id="remember" type="checkbox">
+                <label for="remember"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button class="btn-login">Login</button>
+
+        </form>
+        <div class="another-way">Don't have an account?<a href=""> Sign up</a></div>
+        <div class="line">
+            <span>or continue width</span>
+        </div>
+        <ul class="link-list">
+            <li class="how-conect">
+                <a href="" class="links"><i class="fa Example of google fa-google"></i></a>
+            </li>
+            <li class="how-conect">
+                <a href="" class="links"><i class="fa fa-facebook-square"></i></a>
+            </li>
+            <li class="how-conect">
+                <a href="" class="links"><i class="fa Example of apple fa-apple"></i></a>
+            </li>
+        </ul>
     </div>
     <!-- Example of user-o fa-user-o -->
-     <!-- Example of google fa-google -->
-      <!-- Example of apple fa-apple -->
-       <!-- fa-facebook-square -->
-        <!-- Example of phone fa-phone -->
-         <!-- Example of user-circle-o fa-user-circle-o -->
-          <!-- Example of unlock-alt fa-unlock-alt -->
+    <!-- Example of google fa-google -->
+    <!-- Example of apple fa-apple -->
+    <!-- fa-facebook-square -->
+    <!-- Example of phone fa-phone -->
+    <!-- Example of user-circle-o fa-user-circle-o -->
+    <!-- Example of unlock-alt fa-unlock-alt -->
+    <script src="js/validation.js"></script>
 </body>
+
 </html>
